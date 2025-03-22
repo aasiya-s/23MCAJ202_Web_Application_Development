@@ -1,0 +1,43 @@
+<!-- Create a HTML page to display a new image and text when the mouse comes over the existing content in the page using JavaScript Event Handling. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulb-On-Off</title>
+    <!-- Internal Style Sheet -->
+    <style>
+        /* Body Styles */
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        /* Image Styles */
+        img {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 >Turn Bulb ON or OFF</h1>
+    <img id="bulbImage" src="bulboff.jpg" alt="Bulb Off"><br><br>
+    <h2 id="heading"></h2>
+    <!-- JavaScript Code -->
+    <script>
+        
+        const bulbImage = document.getElementById("bulbImage");
+
+        // To change image and text to bulb on
+        bulbImage.addEventListener("mouseover", () => {
+            bulbImage.src = "bulbon.jpg"; 
+            heading.innerText="Bulb is ON"
+        });
+
+        // To change image and text to bulb off
+        bulbImage.addEventListener("mouseout", () => {
+            bulbImage.src = "bulboff.jpg";
+            heading.innerText="Bulb is OFF" 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!-- Create a HTML registration form and to validate the form using JavaScript code. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+        <link rel="stylesheet" href="4.css">
+    </head>
+    <body>
+        <div class="form-container">
+        <!-- Beginning of the Form -->
+        <form>
+           <table>
+            <!-- Name Field -->
+            <h1>REGISTRATION FORM</h1>
+            <tr>
+                <td><label for="name">Enter Name</label></td>
+                <td><input type="text" id="name" name="name" placeholder="name"></td>
+            </tr>   
+            
+            <!-- Email Field -->
+            <tr>
+                <td><label for="email">Enter Email</label></td>
+                <td><input type="email" name="email" id="email" placeholder="ex@gmail.com"></td>
+            </tr>
+
+            <!-- Phone Number Field -->
+            <tr>
+                <td><label for="phone">Enter Phone</label></td>
+                <td><input type="number" id="phone" name="phone" placeholder="phone number"></td>
+            </tr>
+
+            <!-- Password Field -->
+            <tr>
+                <td><label for="pass">Enter Password</label></td>
+                <td><input type="password" name="pass" id="pass" placeholder="******"></td>
+            </tr>
+
+            <!-- Qualification Dropdown -->
+            <tr>
+                <td><label for="qualification">Select Qualification</label></td>
+                <td><select id="qualification" name="qualification">
+                    <option value=""></option>
+                    <option value="hs">High School</option>
+                    <option value="hss">Higher Secondary School</option>
+                    <option value="ug">Under Graduate</option>
+                    <option value="pg">Post Graduate</option>
+                </select></td>
+            </tr>
+
+            <!-- Buttons -->
+            <tr>
+                <td>
+                    <input type="reset" value="Reset" >
+                    <input type="submit" value="Submit"> 
+            
+                </td>
+            </tr>
+        </table>
+        </form>
+    </div>
+
+        <!-- JavaScript Code -->
+        <script>
+            document.querySelector("form").addEventListener("submit", function(event) {
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const password = document.getElementById("pass").value.trim();
+                const qualification = document.getElementById("qualification").value.trim();
+                let errorMessage = "";
+
+                // Validate name
+                if (name === "" || !/^[a-zA-Z\s]+$/.test(name)) {
+                    errorMessage = "Name must only contain letters and spaces.";
+                }
+
+                // Validate email
+                else if (email === "" || !/\S+@\S+\.\S+/.test(email)) {
+                    errorMessage = "Please enter a valid email address (e.g., name@gmail.com).";
+                }
+
+                // Validate phone number
+                else if (phone === "" || phone.length < 10) {
+                    errorMessage = "Phone number must have at least 10 digits.";
+                }
+
+                // Validate password
+                else if (password === "" || password.length < 6) {
+                    errorMessage = "Password must be at least 6 characters long.";
+                }
+
+                // Validate qualification
+                else if (qualification === "") {
+                    errorMessage = "Please select your qualification.";
+                }
+
+                // To submit the form only if details entered correctly
+                if (errorMessage !== "") {
+                    event.preventDefault(); 
+                    alert(errorMessage); 
+                } else {
+                    alert("Form submitted successfully!"); // Display success message
+                }
+            });
+
+                    
+        </script>
+    </body>
+</html>
+
+        
