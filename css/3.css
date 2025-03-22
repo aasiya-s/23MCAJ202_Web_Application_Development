@@ -1,0 +1,17 @@
+/* External style sheet */
+
+/* body-styles */
+body{
+    background-color: rgb(245, 245, 210);
+    text-align: center;
+    margin: 50px;
+    font-family: 'Arial, sans-serif';
+    display: block;
+}
+
+/* image-styles */
+img {
+    width: 100%; 
+    max-width: 700px;  
+    border: 2px solid #ddd;  
+}

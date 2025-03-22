@@ -1,0 +1,52 @@
+/* body-styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:#d1e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* heading-styles */
+h1 {
+    text-align: center;
+    color: #151313;
+}
+
+/* form elemnt styles-styles */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: rgb(246, 244, 244);
+}
+
+/* form container-styles */
+.form-container {
+    margin-top: 100px;
+    background-color: #9eb0b5;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+/* button-styles */
+
+button {
+    margin: 10px;
+    padding: 12px 32px;
+    background-color: rgb(7, 91, 236);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
