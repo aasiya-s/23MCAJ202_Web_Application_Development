@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <h2>Forms</h2>
+        <form>
+           <table>
+            <tr>
+                <td><label for="name">Enter Name</label></td>
+                <td><input type="text" id="name" name="name" placeholder="name"></td>
+            </tr>   
+        
+            <tr>
+                <td><label for="email">Enter Email</label></td>
+                <td><input type="email" name="email" id="email" placeholder="ex@gmail.com"></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Enter phone</label></td>
+                <td><input type="number" id="phone" name="phone" placeholder="phone number"></td>
+            </tr>
+            <tr>
+                <td><label for="pass">Enter password</label></td>
+                <td><input type="password" name="pass" id="pass" placeholder="**********"></td>
+            </tr>
+            <tr>
+                <td><label for="qualification">Select Qualification</label></td>
+                <td><select id="qualification" name="qualification">
+                    <option value=""></option>
+                    <option value="hs">High School</option>
+                    <option value="hss">Higher Secondary School</option>
+                    <option value="ug">Under Graduate</option>
+                    <option value="pg">Post Graduate</option></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Select Gender</label></td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">Male
+                    <input type="radio" id="female" name="gender" value="female">Female
+                    <input type="radio" id="other" name="gender" value="other">Other
+                </td>
+            </tr>
+            <tr>
+                <td><label for="msg">Enter Message</label></td>
+                <td><textarea type="text" id="message" name="message" rows="4" cols="25" placeholder="Enter your message"></textarea><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="date">Date of Birth</label></td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td><label for="resume">Upload Resume</label></td>
+                <td><input type="file" id="resume" name="resume"></td>
+            </tr>
+            <tr>
+                <td><label for="color">Choose color</label></td>
+                <td><input type="color" id="color" name="color" ></td>
+            </tr>
+            <tr>
+                <td><label for="subsription">Subscribe to newsletter</label></td>
+                <td><input type="checkbox" id="subscription" name="subscription"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="reset"style="background-color: red; color: white; border:none; padding: 7px 32px;">Reset</button>
+                    <button type="submit" style=" color: black; padding: 7px 32px;">Submit</button></td>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>
