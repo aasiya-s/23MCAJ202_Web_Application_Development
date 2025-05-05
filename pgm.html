@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- title -->
+        <title>
+            Registration
+        </title>
+        <!-- Internal CSS -->
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(231, 179, 102);
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1{
+                text-align: center;
+                color: rgb(88, 76, 76);
+            }
+
+            .form-container{
+                padding: 50px 80px;
+                background-color: rgb(248, 252, 251);
+                border-radius: 10px;
+                border: none;  
+                width: 100%; 
+                max-width: 500px;
+            }
+
+            .form-input{
+                width: 450px;
+                margin-bottom: 12px;
+                border-radius: 5px;
+                font-size: 12px;
+                font-weight: 5px;
+                height: 30px;
+            }
+
+            input[type="submit"], input[type="reset"]{
+                padding: 5px;
+                border-radius: 5px;
+                background-color: red ;
+                font-weight: 12;
+                color: white;
+                border: none;
+                width: 100px;
+                cursor: pointer;
+            }
+            input[type="submit"]{
+                padding: 5px;
+                border-radius: 5px;
+                background-color: rgb(252, 250, 250) ;
+                font-weight: 12;
+                color: black;
+                border: 1;
+                width: 100px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover{
+                opacity:0.09;
+            }
+            input[type="reset"]:hover{
+                opacity:0.01;
+            }
+        </style>
+         
+    </head>
+    <body>
+        <!-- Form -->
+        <div class="form-container">
+            <form>
+                <h1>Registration Form</h1>
+                <table>
+                    <!-- name -->
+                    <tr>
+                        <td><label for="name">Name</label></td>
+                        <td><input class="form-input" type="text" name="name" id="name" placeholder="Enter your name" required></td>
+                    </tr>
+                    <!-- email -->
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input class="form-input" type="email" name="email" id="email" placeholder="Enter your email" required></td>
+                    </tr>
+                    <!-- dob -->
+                    <tr>
+                        <td><label for="DOB">Date of Birth</label></td>
+                        <td><input class="form-input" type="date" name="dob" id="dob" placeholder="dd-mm-yyyy" date="01-01-2015" required></td>
+                    </tr>
+                    <!-- qualification -->
+                    <tr>
+                        <td><label for="qualification">Qualifications</label></td>
+                        <td><select class="form-input" name="qualification" id="qualification" required>
+                            <option value=""></option>
+                            <option value="bca">BCA</option>
+                            <option value="btech">BTech</option>
+                            <option value="mca">MCA</option>
+                            <option value="mtech">MTech</option>
+                        </select></td>
+                    </tr>
+                    <!-- experience -->
+                    <tr>
+                        <td><label for="experience">Experience</label></td>
+                        <td><input class="form-input" type="number" name="experience" id="experience" erquired ></td>
+
+                        </td>
+                    </tr>
+                    <!-- gender -->
+                    <tr>
+                        <td><label for="gender">Gender</label></td>
+                        <td>
+                            <input type="radio" name="gender" id="male" value="male">Male
+                            <input type="radio" name="gender" id="female" value="female">Female
+                            <input type="radio" name="gender" id="other" value="other">Other
+                        </td>
+                    </tr>
+                    <!-- comment -->
+                    <tr>
+                        <td><label for="comment">Comment</label></td>
+                        <td><textarea class="form-input" type="text" name="comment" id="comment" placeholder="Enter your comment"></textarea></td>
+                    </tr>
+                    <!-- buttons -->
+                    <tr>
+                        <td><input type="submit" name="submit" id="submit"></td>
+                        <td><input type="reset" name="reset" id="reset"></td>
+                    </tr>
+                </table>
+            </form>
+            <script>
+                document.querySelector("form").addEventListener("submit", function(event){
+                    const name = document.getElementById("name").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const dob = document.getElementById("dob").value.trim();
+                    const qualification = document.getElementById("qualification").value.trim();
+                    const experience = document.getElementById("experience").value.trim();
+                    const gender = document.getElementById("gender").value.trim();
+                    const comment = document.getElementById("comment").value.trim();
+            
+                    let errorMessage="";
+                    
+                    // Field Validations
+                    if(name==="" || ! /^[A-Za-z\s]/+$.test(name)){
+                        errorMessage="Name must contain only letters and spaces";                  
+                    }
+                    else if(email==="" || ! /\s+@\s+\.\s+/.test(email)) {
+                        errorMessage="Invalid mail format.";
+                    }
+                    else if(dob==="") {
+                        errorMessage="Date of Birth must be entered";
+                    }
+                    else if(qualification==="") {
+                        errorMessage="Qualification must be entered";
+                    }
+                    else if(experience==="") {
+                        errorMessage="Experience must be entered";
+                    }
+                    else if(gender==="") {
+                        errorMessage="Gender must be entered";
+                    }
+            
+                    if (errorMessage!==""){
+                        event.preventDefault();
+                        alert(errorMessage);
+                    }
+                    else {
+                        alert("Form successfully submitted!");
+                    }
+                });
+            </script>
+        
+           
+    </body>
+</html>
